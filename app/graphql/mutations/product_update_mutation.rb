@@ -10,7 +10,7 @@ module Mutations
     argument :input, Inputs::ProductUpdateInput, "The attributes of the product to be updated.", required: true
 
     def resolve(name:, input:)
-      product = $PRODUCTS.find { |product| product.name === name }
+      product = $PRODUCTS.find { |p| p.name === name }
       product = OpenStruct.new(product.to_h.merge(input.to_h))
 
       product
