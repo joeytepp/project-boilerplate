@@ -1,0 +1,21 @@
+.Button-btn {
+  padding: 10px 5px;
+  background: white;
+  border-radius: 3px;
+  border: solid 1px black;
+}
+
+.Button-red {
+  background: red;
+  color: white;
+}
+
+.Button-green {
+  background: green;
+  color: white;
+}
+
+.Button-blue {
+  background: blue;
+  color: white;
+}
