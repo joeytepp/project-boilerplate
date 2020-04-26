@@ -35,4 +35,8 @@ chdir APP_ROOT do
 
   puts "\n== Restarting application server =="
   system! "bin/rails restart"
+
+  puts "\n== Setting up git hooks =="
+  system! "chmod +x scripts/*.bash"
+  system! "./scripts/install-hooks.bash"
 end
