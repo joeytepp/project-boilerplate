@@ -1,0 +1,100 @@
+type Mutation {
+  """
+  Creates a new product
+  """
+  productCreate(input: ProductCreateInput!): Product
+
+  """
+  Updates a product by name
+  """
+  productUpdate(
+    """
+    The attributes of the product to be updated.
+    """
+    input: ProductUpdateInput!
+
+    """
+    The name of the product to be updated.
+    """
+    name: String!
+  ): Product
+}
+
+type Product {
+  """
+  The color of the product.
+  """
+  color: ProductColorEnum!
+
+  """
+  The image source for the product.
+  """
+  imgSrc: Url!
+
+  """
+  The name of the product
+  """
+  name: String!
+}
+
+enum ProductColorEnum {
+  BLUE
+  GREEN
+  RED
+}
+
+input ProductCreateInput {
+  """
+  The color of the product.
+  """
+  color: ProductColorEnum!
+
+  """
+  The image source of the product.
+  """
+  imgSrc: Url!
+
+  """
+  The name of the product.
+  """
+  name: String!
+}
+
+input ProductUpdateInput {
+  """
+  The color of the product.
+  """
+  color: ProductColorEnum
+
+  """
+  The image source of the product.
+  """
+  imgSrc: Url
+
+  """
+  The name of the product.
+  """
+  name: String
+}
+
+type Query {
+  """
+  Returns a product by name.
+  """
+  product(
+    """
+    The identifier of the product.
+    """
+    name: String!
+  ): Product
+
+  """
+  Returns all products.
+  """
+  products: [Product!]!
+}
+
+"""
+A valid URL, transported as a string.
+"""
+scalar Url

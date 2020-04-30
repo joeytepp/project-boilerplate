@@ -23,10 +23,6 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-# GraphQL schema (for graphql-code-gen)
-schema.graphql
-schema.json
-
 /public/packs
 /public/packs-test
 /node_modules
